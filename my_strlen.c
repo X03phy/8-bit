@@ -19,7 +19,7 @@ size_t	my_strlen(const char *str)
 	unsigned long int	longword, himagic, lomagic;
 
     // Alignement memoire
-	for (char_ptr = str; ((unsigned long int)char_ptr & 7) != 0; char_ptr++)
+	for (char_ptr = str; ((unsigned long int)char_ptr & 7) != 0; ++char_ptr)
 		if (*char_ptr == '\0')
 			return (char_ptr - str);
 
