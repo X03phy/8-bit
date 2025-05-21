@@ -19,7 +19,7 @@ size_t my_strlen(const char *s)
 			return (a - s);
 
 	const uintptr_t *w;
-	for (w = (const uintptr_t *)a; !HASZERO(*w); w++);
+	for (w = (const uintptr_t *)a; !HASZERO(*w); ++w);
 
 	a = (const char *)w;
 	for(; *a; a++);
