@@ -8,5 +8,5 @@ int Q_log2( int x )
 	while ( (answer >>= 1) != 1 )
 		answer++;
 
-	return (answer);
+	return ( answer );
 }
