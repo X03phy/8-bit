@@ -53,8 +53,8 @@ size_t my_strlen( const char *str )
 
 	// Alignement memoire
 	for ( char_ptr = str; ( ( unsigned long int ) char_ptr & ( sizeof( unsigned long int ) - 1 ) ) != 0; ++char_ptr )
-		if (*char_ptr == '\0')
-			return (char_ptr - str);
+		if ( *char_ptr == '\0' )
+			return ( char_ptr - str );
 
 	// Comparaison 8 octets par 8 octets
 	longword_ptr = ( unsigned long int * ) char_ptr;
