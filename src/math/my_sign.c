@@ -1,6 +1,6 @@
 // szas
 
-int	my_sign(int x)
+int my_sign( int x )
 {
-	return ((x >> 31) | (!!x));
+	return ( ( x >> 31 ) | ( !!x ) );
 }

@@ -45,11 +45,11 @@
 #include <stddef.h>
 
 // glibc
-size_t	my_strlen(const char *str)
+size_t my_strlen( const char *str )
 {
-	const char	*char_ptr;
-	const unsigned long int	*longword_ptr;
-	unsigned long int	longword, himagic, lomagic;
+	const char *char_ptr;
+	const unsigned long int *longword_ptr;
+	unsigned long int longword, himagic, lomagic;
 
 	// Alignement memoire
 	for (char_ptr = str; ((unsigned long int)char_ptr & (sizeof(unsigned long int)-1)) != 0; ++char_ptr)
