@@ -52,7 +52,7 @@ size_t my_strlen( const char *str )
 	unsigned long int longword, himagic, lomagic;
 
 	// Alignement memoire
-	for (char_ptr = str; ( ( unsigned long int ) char_ptr & ( sizeof( unsigned long int ) - 1 ) ) != 0; ++char_ptr)
+	for ( char_ptr = str; ( ( unsigned long int ) char_ptr & ( sizeof( unsigned long int ) - 1 ) ) != 0; ++char_ptr )
 		if (*char_ptr == '\0')
 			return (char_ptr - str);
 
@@ -65,7 +65,7 @@ size_t my_strlen( const char *str )
 		lomagic = ( lomagic << 32 ) | lomagic;
 		himagic = ( himagic << 32 ) | himagic;
 	}
-	for(;;)
+	for( ; ; )
 	{
 		longword = *longword_ptr++;
 		// Le point clef du code est dans ce if.
