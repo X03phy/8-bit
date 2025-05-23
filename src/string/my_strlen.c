@@ -52,18 +52,18 @@ size_t my_strlen( const char *str )
 	unsigned long int longword, himagic, lomagic;
 
 	// Alignement memoire
-	for (char_ptr = str; ((unsigned long int)char_ptr & (sizeof(unsigned long int)-1)) != 0; ++char_ptr)
+	for (char_ptr = str; ( ( unsigned long int ) char_ptr & ( sizeof( unsigned long int ) - 1 ) ) != 0; ++char_ptr)
 		if (*char_ptr == '\0')
 			return (char_ptr - str);
 
 	// Comparaison 8 octets par 8 octets
-	longword_ptr = (unsigned long int *)char_ptr;
+	longword_ptr = ( unsigned long int * ) char_ptr;
 	lomagic = 0x01010101L;
 	himagic = 0x80808080L;
-	if (sizeof(unsigned long int) == 8)
+	if ( sizeof( unsigned long int ) == 8 )
 	{
-		lomagic = (lomagic << 32) | lomagic;
-		himagic = (himagic << 32) | himagic;
+		lomagic = ( lomagic << 32 ) | lomagic;
+		himagic = ( himagic << 32 ) | himagic;
 	}
 	for(;;)
 	{
@@ -72,27 +72,28 @@ size_t my_strlen( const char *str )
 		// On verifie si 1 octet au moins parmi les 8 est '\0'.
 		// On ne s'occupe que du bit le plus grand.
 		// Si le char est '\0', la formule nous donne [1000 0000] (!= 0), sinon il vaut [0000 0000] (==0).
-		if (((longword - lomagic) & ~longword & himagic) != 0)
+		if ( ( ( longword - lomagic ) & ~longword & himagic ) != 0 )
 		{
 			// Comparaisons finales, char par char (octet par octet) pour trouver la position de l'octet '\0'.
-			const char *cp = (const char *)(longword_ptr - 1);
-			if (cp[0] == 0)
-				return (cp - str);
-			if (cp[1] == 0)
-				return (cp - str + 1);
-			if (cp[2] == 0)
-				return (cp - str + 2);
-			if (cp[3] == 0)
-				return (cp - str + 3);
-			if (cp[4] == 0)
-				return (cp - str + 4);
-			if (cp[5] == 0)
-				return (cp - str + 5);
-			if (cp[6] == 0)
-				return (cp - str + 6);
+			const char *cp = ( const char * ) ( longword_ptr - 1 );
+
+			if ( cp[0] == 0 )
+				return ( cp - str );
+			if ( cp[1] == 0 )
+				return ( cp - str + 1 );
+			if ( cp[2] == 0 )
+				return ( cp - str + 2 );
+			if ( cp[3] == 0 )
+				return ( cp - str + 3 );
+			if ( cp[4] == 0 )
+				return ( cp - str + 4 );
+			if ( cp[5] == 0 )
+				return ( cp - str + 5 );
+			if ( cp[6] == 0 )
+				return ( cp - str + 6 );
 			// Pas besoin de cette ligne, on enleve un check.
 			// if (cp[7] == 0)
-			return (cp - str + 7);
+			return ( cp - str + 7 );
 		}
 	}
 }
