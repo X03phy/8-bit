@@ -5,6 +5,8 @@
 		"stdio.h": "c",
 		"unistd.h": "c",
 		"stddef.h": "c",
-		"types.h": "c"
+		"types.h": "c",
+		"stdlib.h": "c",
+		"random": "c"
 	}
 }
