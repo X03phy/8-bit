@@ -42,7 +42,7 @@
 
 
 // Pour size_t
-#include <stddef.h>
+#include <stddef.h>		
 
 // glibc
 size_t my_strlen( const char *str )
