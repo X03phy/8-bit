@@ -7,6 +7,7 @@
 		"stddef.h": "c",
 		"types.h": "c",
 		"stdlib.h": "c",
-		"random": "c"
+		"random": "c",
+		"limits.h": "c"
 	}
 }
