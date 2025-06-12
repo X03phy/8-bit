@@ -1,7 +1,7 @@
 #include <endian.h>
 // Pour un double: valeur = ±mantisse × 2^(exposant - 1023)
 
-unsigned int find_log_base_two_float( unsigned int v )
+unsigned int find_log_base_two_float_way( unsigned int v )
 {
 	union { unsigned int u[2]; double d; } t; // temp
 
