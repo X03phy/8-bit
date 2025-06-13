@@ -9,7 +9,7 @@ Arguments:
 	int : the value to convert.
 
 Return:
-	The positive value.
+	unsigned int : The positive value.
 
 How it works:
 	We use a mask to convert our value.
