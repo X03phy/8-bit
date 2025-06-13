@@ -33,6 +33,7 @@ Example:
 		==
 		00000000 00000000 00000000 00101010 == 42
 
+Notes:
 	! Pour convertir un entier négatif en positif en complément à deux, on a ces 3 formules:
 	! 1) ~( v ) + 1
 	! 2) ( v ^ ( -1 ) ) + 1
